@@ -1,0 +1,63 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:700italic,400,400italic,700);
+html {
+  font: 100%/1.5 Lato, Helvetica Neue, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-image: linear-gradient(#c5c7cb, #f8f9fa);
+  min-height: 100%;
+  text-align: center;
+}
+
+.colorpicker {
+  top: 100px;
+  position: absolute;
+}
+
+svg text {
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+svg text::selection {
+  background: none;
+}
+
+svg .ctrl-rect {
+  fill: #ffffff;
+  stroke: #222222;
+  stroke-width: 1;
+}
+
+svg .ctrl-bounds {
+  fill-opacity: 0;
+  stroke: #222222;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-dasharray: 2, 4;
+}
+
+.canvas svg {
+  background: #fff;
+}
+
+.btn {
+  font: 100%/1.5 Lato, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 0.825em;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.35em 1em;
+  background-color: #eaeef1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+  border-radius: 3px;
+  color: rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+.btn:hover,
+.btn.hover {
+  background-color: #fff;
+}

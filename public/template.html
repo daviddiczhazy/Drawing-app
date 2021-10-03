@@ -1,0 +1,141 @@
+<div id="app">
+  <div class="demo-container">
+    <div>
+      <button class="btn" @click="addTextField">Add Text Field</button>
+      <button class="btn" @click="addRectangle">Add Rectangle</button>
+      <button class="btn" @click="addEllipse">Add Ellipse</button>
+    </div>
+    <div class="colorpicker" v-show="showcolors">
+      <color-picker v-model="colors" @change-color="onChange"></color-picker>
+    </div>
+    <div class="active-item-toolbar">
+      <button class="btn" @click="toggleColor">
+        <i
+          class="fa fa-square"
+          aria-hidden="true"
+          :style="{color: colors.hex}"
+        ></i>
+      </button>
+      <button class="btn" @click="textAlign('start')">
+        <i class="fa fa-align-left" aria-hidden="true"></i>
+      </button>
+      <button class="btn" @click="textAlign('middle')">
+        <i class="fa fa-align-center" aria-hidden="true"></i>
+      </button>
+      <button class="btn" @click="textAlign('end')">
+        <i class="fa fa-align-right" aria-hidden="true"></i>
+      </button>
+      <button class="btn" @click="moveUp()">
+        <i class="fa fa-angle-up" aria-hidden="true"></i>
+      </button>
+      <button class="btn" @click="moveDown()">
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="canvas">
+      <svg
+        :width="width"
+        :height="height"
+        @mousemove="onMouseMove($event)"
+        @mouseup="onMouseUp($event)"
+        @click="onClickItem($event,{})"
+      >
+        <g
+          v-for="item in items"
+          :transform="'translate('+item.x+', '+item.y+')'"
+        >
+          <!-- item -->
+
+          <text
+            v-if="item.type=='text'"
+            :x="getTextXPos(item)"
+            :y="item.height*0.9"
+            :_width="item.width"
+            :_height="item.height"
+            :font-size="item.height"
+            :font-family="item.font"
+            :fill="item.color"
+            :text-anchor="item.textAnchor"
+            @click="onClickItem($event,item)"
+          >
+            {{item.text}}
+          </text>
+
+          <rect
+            v-if="item.type=='rect'"
+            :x="0"
+            :y="0"
+            :width="item.width"
+            :height="item.height"
+            :fill="item.color"
+            @click="onClickItem($event,item)"
+          ></rect>
+
+          <ellipse
+            v-if="item.type=='ellipse'"
+            :cx="item.width/2"
+            :cy="item.height/2"
+            :rx="item.width/2"
+            :ry="item.height/2"
+            :fill="item.color"
+            @click="onClickItem($event,item)"
+          ></ellipse>
+
+          <!-- controls 
+        <g v-for="item in items"
+          :transform="'translate('+item.x+', '+item.y+')'"
+          v-if="item.active"
+        >-->
+          <g v-if="item.active">
+            <rect
+              :x="0"
+              :y="0"
+              :width="item.width"
+              :height="item.height"
+              class="ctrl-bounds"
+              @click="onClickItem($event,item)"
+              @_mouseout="onMouseUpRegion($event,item)"
+              @mousedown="onMouseDownRegion($event,item)"
+            />
+            <g @mousedown="onMouseDownHandles($event,item)">
+              <rect
+                class="ctrl-rect"
+                :width="tools.squaresize"
+                :height="tools.squaresize"
+                data-handleid="1"
+                :x="0-tools.squaresize/2"
+                :y="0-tools.squaresize/2"
+              />
+              <rect
+                class="ctrl-rect"
+                :width="tools.squaresize"
+                :height="tools.squaresize"
+                data-handleid="3"
+                :x="item.width-tools.squaresize/2"
+                :y="0-tools.squaresize/2"
+              />
+              <rect
+                class="ctrl-rect"
+                :width="tools.squaresize"
+                :height="tools.squaresize"
+                data-handleid="7"
+                :x="0-tools.squaresize/2"
+                :y="item.height-tools.squaresize/2"
+              />
+              <rect
+                class="ctrl-rect"
+                :width="tools.squaresize"
+                :height="tools.squaresize"
+                data-handleid="9"
+                :x="item.width-tools.squaresize/2"
+                :y="item.height-tools.squaresize/2"
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+Press Delete button to remove selected item.<br />
+still lots to do...

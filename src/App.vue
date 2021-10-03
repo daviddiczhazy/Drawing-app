@@ -1,10 +1,23 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div>
+    <h1 class="front-view-title">Drawing app</h1>
+
+    <front-view></front-view>
   </div>
-  <router-view />
 </template>
+
+<script>
+// @ is an alias to /src
+import 'bulma/css/bulma.css'
+import FrontView from '@/views/FrontView'
+
+export default {
+  name: 'App',
+  components: {
+    FrontView,
+  },
+}
+</script>
 
 <style>
 #app {
@@ -16,7 +29,7 @@
 }
 
 #nav {
-  padding: 30px;
+  padding-bottom: 30px;
 }
 
 #nav a {
@@ -26,5 +39,13 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.front-view-title {
+  background-color: #2c3e50;
+  color: aliceblue;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 0.5em;
 }
 </style>

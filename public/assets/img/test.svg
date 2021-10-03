@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg"    width="480" height="330" data-v-7ad99eb8="">  <g transform="translate(175, 107)" data-v-7ad99eb8=""><!-- item --><!--v-if--><ellipse cx="60" cy="60" rx="60" ry="60" fill="violet" data-v-7ad99eb8=""></ellipse><!-- controls 
+        <g v-for="item in items"
+          :transform="'translate('+item.x+', '+item.y+')'"
+          v-if="item.active"
+        >--><!--v-if--></g><g transform="translate(44, 252)" data-v-7ad99eb8=""><!-- item --><rect x="0" y="0" width="400" height="20" fill="slategray" data-v-7ad99eb8=""></rect><!--v-if--><!-- controls 
+        <g v-for="item in items"
+          :transform="'translate('+item.x+', '+item.y+')'"
+          v-if="item.active"
+        >--><!--v-if--></g><g transform="translate(41, 59)" data-v-7ad99eb8=""><!-- item --><rect x="0" y="0" width="400" height="20" fill="slategray" data-v-7ad99eb8=""></rect><!--v-if--><!-- controls 
+        <g v-for="item in items"
+          :transform="'translate('+item.x+', '+item.y+')'"
+          v-if="item.active"
+        >--><!--v-if--></g></svg>
