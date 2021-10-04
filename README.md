@@ -26,7 +26,7 @@ yarn lint
 
 ### Start Websocket server
 
-cd server.
+cd server
 
 node server.js
 
