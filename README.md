@@ -32,5 +32,10 @@ cd server
 node server.js
 
 
+<hr>
+![image](https://user-images.githubusercontent.com/32029267/135804129-a327a45b-059b-4564-96ae-d0d3887b2d0c.png)
+
+
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
