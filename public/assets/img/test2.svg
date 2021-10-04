@@ -1,5 +1,0 @@
-<svg id="drawingsvg1" width="480" height="330" data-v-7ad99eb8=""> // eslint-disable-next-line vue/require-v-for-key <g transform="translate(40, 40)" data-v-7ad99eb8=""><!-- item --><rect x="0" y="0" width="400" height="20" fill="#366696" data-v-7ad99eb8=""></rect><!--v-if--><!-- controls
-        <g v-for="item in items"
-          :transform="'translate('+item.x+', '+item.y+')'"
-          v-if="item.active"
-        >--><!--v-if--></g></svg>
