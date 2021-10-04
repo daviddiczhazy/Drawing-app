@@ -25,6 +25,7 @@ yarn lint
 ```
 
 ### Start Websocket server
+(in new terminal)
 
 cd server
 
