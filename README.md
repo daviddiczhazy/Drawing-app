@@ -24,5 +24,11 @@ yarn build
 yarn lint
 ```
 
+### Start Websocket server
+...
+cd server
+node server.js
+...
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
