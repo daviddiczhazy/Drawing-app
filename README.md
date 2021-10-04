@@ -25,10 +25,17 @@ yarn lint
 ```
 
 ### Start Websocket server
+(in new terminal)
 
 cd server
 
 node server.js
+
+
+<hr>
+![image](https://user-images.githubusercontent.com/32029267/135804230-be39614c-33ba-413a-95e9-ba2e7e5babe2.png)
+
+
 
 
 ### Customize configuration
